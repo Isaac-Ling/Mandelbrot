@@ -44,6 +44,7 @@ namespace Mandelbrot
             _mandelRenderer.Parameters["MaxIterations"].SetValue(_maxIterations);
             _mandelRenderer.Parameters["Aspect"].SetValue(new Vector2(1, (float)GraphicsDevice.DisplayMode.Height / GraphicsDevice.DisplayMode.Width));
             _mandelRenderer.Parameters["Pan"].SetValue(_pan);
+            TEST
         }
 
         protected override void Update(GameTime gameTime)
