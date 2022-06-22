@@ -15,7 +15,7 @@ namespace Mandelbrot
         private Texture2D _texture;
         private Effect _mandelRenderer;
         private float _zoom = 3;
-        private int _maxIterations = 300;
+        private int _maxIterations = 250;
         private Vector2 _pan = Vector2.Zero;
 
         public Game1()
@@ -23,6 +23,7 @@ namespace Mandelbrot
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = false;
+            IsFixedTimeStep = false;
         }
 
         protected override void Initialize()
