@@ -2,19 +2,20 @@
 int MaxIterations;
 float2 Aspect;
 float2 Pan;
+float2 Constant;
 
-float Depth(float2 c)
+float Depth(float2 zInput)
 {
     int iterations = 0;
-    float2 z = 0;
+    float2 z = zInput;
     float zxSqr = 0;
     float zySqr = 0;
-    
+
     do
     {
         zxSqr = z.x * z.x;
         zySqr = z.y * z.y;
-        z = float2(zxSqr - zySqr, 2 * z.x * z.y) + c;
+        z = float2(zxSqr - zySqr, 2 * z.x * z.y) + Constant;
         iterations++;
     } while (zxSqr + zySqr <= 4.0 && iterations < MaxIterations);
 

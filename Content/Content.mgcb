@@ -13,6 +13,12 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Julia.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Julia.fx
+
 #begin Mandelbrot.fx
 /importer:EffectImporter
 /processor:EffectProcessor
