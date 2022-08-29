@@ -1,4 +1,12 @@
-﻿float Zoom;
+﻿#if OPENGL
+#define VS_SHADERMODEL vs_3_0
+#define PS_SHADERMODEL ps_3_0
+#else
+#define VS_SHADERMODEL vs_4_0
+#define PS_SHADERMODEL ps_4_0
+#endif
+
+float Zoom;
 int MaxIterations;
 float2 Aspect;
 float2 Pan;
@@ -32,6 +40,6 @@ technique Technique1
 {
     pass Pass1
     {
-        PixelShader = compile ps_3_0 PixelShaderFunction();
+        PixelShader = compile PS_SHADERMODEL PixelShaderFunction();
     }
 }

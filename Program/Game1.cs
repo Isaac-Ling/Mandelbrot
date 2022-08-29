@@ -19,7 +19,7 @@ namespace Mandelbrot
         private Vector2 _constant = new Vector2(0.346f, 0.346f);
         private Vector2 _pan = Vector2.Zero;
         private FractalType fractalType;
-
+        
         public Game1()
         {
             fractalType = FractalType.Mandelbrot;
@@ -27,6 +27,7 @@ namespace Mandelbrot
             Content.RootDirectory = "Content";
             IsMouseVisible = false;
             IsFixedTimeStep = false;
+            _graphics.GraphicsProfile = GraphicsProfile.HiDef;
         }
 
         protected override void Initialize()
@@ -88,12 +89,12 @@ namespace Mandelbrot
         {
             KeyboardState state = Keyboard.GetState();
 
-            if (state.IsKeyDown(Keys.X))
+            if (state.IsKeyDown(Keys.S))
             {
                 _zoom *= 1.02f;
                 SetParameters();
             }
-            if (state.IsKeyDown(Keys.Z))
+            if (state.IsKeyDown(Keys.W))
             {
                 _zoom /= 1.02f;
                 SetParameters();
